@@ -227,7 +227,8 @@ def get_report_analysis(prompt: str):
 
     ```json
     {
-      "analysis": "<Common analysis paragraph covering all scores and recommendations>"
+      "analysis": "<Common analysis paragraph covering all scores and recommendations>",
+      "feedback": "<Feedback paragraph based on analysis>"
     }
     """
 
