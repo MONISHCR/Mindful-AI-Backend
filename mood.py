@@ -118,4 +118,4 @@ def generate_questions_api():
         return jsonify({"error": "Failed to generate questions", "details": str(e), "failed_prompt_user_type": user_type}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5003)
+    app.run(debug=True, port=3003)

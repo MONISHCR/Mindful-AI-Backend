@@ -566,6 +566,7 @@ app.get('/quiz/:userId', auth, async (req, res) => {
 });
 
 
+
 app.get("/api/generate-analysis", async (req, res) => {
   try {
       const journal = await Journal.findOne().sort({ createdAt: -1 }).limit(1); 
