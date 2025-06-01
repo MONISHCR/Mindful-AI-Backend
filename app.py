@@ -301,8 +301,10 @@ def analyze_report():
         return jsonify(analysis_json)
     except Exception as e:
         return jsonify({"error": "Failed to process analysis", "details": str(e)}), 500
-    
-# if __name__ == "__main__":
-#     port = int(os.getenv("PORT", 5000))  # Use PORT from environment or default to 5000
-#     app.run(host="0.0.0.0", port=port, debug=True)
-#mm
+
+@app.route('/')
+def index():
+    return "MindWellness API is running!"
+
+if __name__ == "__main__":
+    app.run()
