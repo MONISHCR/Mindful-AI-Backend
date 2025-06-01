@@ -16,13 +16,13 @@ const Mood = require("./models/Mood");
 // const { default: ArtTherapy } = require("../PSYCHOLOGICAL-CHATBOT-main/src/components/ArtTherapy");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4000;
 const JWT_SECRET = process.env.JWT_SECRET || "your_secret_key"; // Ensure this is the same everywhere
 
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000', // React app's URL
+  origin: 'https://mindwellness-site.vercel.app', // React app's URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
   allowedHeaders: ['Content-Type', 'Authorization'] // Allowed headers
   
