@@ -11,9 +11,11 @@ load_dotenv()
 
 app = Flask(__name__)
 # Enable CORS for all routes, allowing requests from your React frontend (e.g., http://localhost:3000)
-CORS(app)
+# CORS(app)
+CORS(app, origins=["https://mindwellness-site.vercel.app"], supports_credentials=True)
 
-YOUTUBE_API_KEY = 'AIzaSyDIUnHwthByH5m26yhNgm31GeMmbUVDEI8'
+
+YOUTUBE_API_KEY = 'AIzaSyCnOF2oY3xz3Qjxu66ZV1LsOXodaxPOplE'
 youtube = None
 
 # --- YouTube API Setup ---
@@ -111,8 +113,12 @@ def handle_search():
         # Should not happen if error is None and video_id is None, but as fallback
         return jsonify({"success": False, "error": "Unknown error occurred during search"}), 500
 
+@app.route('/')
+def index():
+    return "MindWellness Music API is running!"
+
 # --- Run the App ---
 if __name__ == '__main__':
     # Runs on http://127.0.0.1:5000 by default
     # debug=True automatically reloads on code changes (good for development)
-    app.run(debug=True, port=5003)
+    app.run()

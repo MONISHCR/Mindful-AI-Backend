@@ -8,3 +8,4 @@ gunicorn
 Pillow
 requests 
 PyPDF2
+google-api-python-client
