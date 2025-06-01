@@ -109,7 +109,7 @@ def generate_image():
 
     if not user_input:
         response = make_response(jsonify({"error": "No input provided"}), 400)
-        response.headers.add("Access-Control-Allow-Origin", "http://localhost:3000")
+        response.headers.add("Access-Control-Allow-Origin", "https://mindwellness-site.vercel.app")
         return response
 
     prompt = f"""
