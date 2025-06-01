@@ -8,7 +8,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, resources={r"/generate-questions": {"origins": "http://localhost:3000"}}) # Adjust if your React port is different
+CORS(app, resources={
+    r"/generate-questions": {
+        "origins": "https://mindwellness-site.vercel.app"
+    }
+}, supports_credentials=True)
 
 try:
     genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
@@ -117,5 +121,9 @@ def generate_questions_api():
         # Consider returning the prompt that failed for easier debugging
         return jsonify({"error": "Failed to generate questions", "details": str(e), "failed_prompt_user_type": user_type}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True, port=3003)
+@app.route('/')
+def index():
+    return "MindWellness Mood API is running!"
+
+if __name__ == "__main__":
+    app.run()
