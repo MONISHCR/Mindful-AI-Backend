@@ -495,39 +495,7 @@ app.post("/mood", auth, async (req, res) => {
   }
 });
 
-app.get("/api/generate-analysis", async (req, res) => {
-  try {
-      const journal = await Journal.findOne().sort({ createdAt: -1 }).limit(1); 
-      const mood = await Mood.findOne().sort({ createdAt: -1 }).limit(1); 
-      const quizResult = await QuizResult.findOne().sort({ createdAt: -1 }).limit(1); 
 
-      if (!journal || !mood || !quizResult) {
-          return res.status(400).json({ error: "Missing data for analysis report." });
-      }
-
-      const analysisData = {
-        journal_score: journal.score, 
-        self_awareness_score: mood.self_awareness_score,
-        mental_score:mood.mental_score,
-        eq_score: mood.eq_score, 
-        quiz_score: quizResult.totalScore 
-      };
-    
-        // Send responses to Python API for analysis
-        const analysisResponse = await axios.post("http://127.0.0.1:3002/analyze_report", {
-          content: analysisData,
-        });
-    analysis = analysisResponse.data;
-    console.log("Analysis Data to be sent:",analysisData)
-      res.json({
-        analysis: analysis.analysis, // text paragraph from Python
-        scores: analysisData,         // original scores (to plot bar chart)
-      });
-  } catch (error) {
-      console.error("Error generating analysis report:", error);
-      res.status(500).json({ error: "Failed to generate analysis report." });
-  }
-});
 
 app.get('/journal/:userId', auth, async (req, res) => {
   console.log("✔️ Journal route hit:", req.params.userId);

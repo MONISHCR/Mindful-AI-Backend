@@ -197,13 +197,13 @@ def get_report_analysis(prompt: str):
 
     **Evaluation Criteria:**
     - **Mental Health Score**: Reflects emotional well-being, positivity, stress levels, and signs of depression or anxiety.
-      - **Instruction**: A score closer to 1 indicates better mental health, with fewer signs of stress, anxiety, or depression. A higher score closer to 10 suggests that the individual may be experiencing significant emotional distress or mental health challenges.
+      - **Instruction**: A score closer to 1 indicates better mental health, with fewer signs of stress, anxiety, or depression. A higher score closer to 10 suggests that the individual may be experiencing significant emotional distress or mental health challenges.While generating the report refer to this score as mental health risk score.
     
     - **Emotional Quotient (EQ) Score**: Assesses the ability to recognize, manage, and express emotions and handle interpersonal relationships.
-      - **Instruction**: A lower score (closer to 1) indicates strong emotional intelligence, with the individual effectively managing their emotions and relationships. A higher score (closer to 10) suggests challenges in emotional regulation or interpersonal relationships.
+      - **Instruction**: A lower score (closer to 1) indicates strong emotional intelligence, with the individual effectively managing their emotions and relationships. A higher score (closer to 10) suggests challenges in emotional regulation or interpersonal relationships.While generating the report refer to this score as emotional dysregulation score.
     
     - **Self-Awareness Score**: Measures understanding of personal emotions, triggers, thoughts, and behavioral patterns.
-      - **Instruction**: A lower score (closer to 1) indicates high self-awareness, with the individual having a good grasp of their emotions, thoughts, and behavior patterns. A higher score closer to 10 suggests low self-awareness and potential difficulty in recognizing personal triggers and emotional responses.
+      - **Instruction**: A lower score (closer to 1) indicates high self-awareness, with the individual having a good grasp of their emotions, thoughts, and behavior patterns. A higher score closer to 10 suggests low self-awareness and potential difficulty in recognizing personal triggers and emotional responses.While generating the report refer to this score as self-awareness risk score.
 
     - **Quiz Score**: Reflects the individual's emotional and behavioral assessment through a quiz.
       - **Instruction**: A lower score indicates fewer behavioral or emotional concerns, while a higher score could signify the presence of greater emotional or behavioral challenges, requiring attention and improvement.
