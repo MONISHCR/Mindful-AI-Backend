@@ -158,7 +158,7 @@ const auth = (req, res, next) => {
 app.post("/journal", auth, async (req, res) => {
   try {
     const { content } = req.body;
-    const analysisResponse = await axios.post("http://127.0.0.1:3002/analyze", { content });
+    const analysisResponse = await axios.post("https://mindful-ai-backend-aby0.onrender.com/analyze", { content });
     const { score, explanation, recommendation } = analysisResponse.data;
     const newEntry = new Journal({ 
       content, 
@@ -464,7 +464,7 @@ app.post("/mood", auth, async (req, res) => {
     console.log("Formatted Prompt:::::::::::\n" + formattedPrompt);
 
     // Send responses to Python API for analysis
-    const analysisResponse = await axios.post("http://127.0.0.1:3002/analyze_mood", {
+    const analysisResponse = await axios.post("https://mindful-ai-backend-aby0.onrender.com/analyze_mood", {
       content: formattedPrompt,
     });
     const { mental_score, eq_score, self_awareness_score } = analysisResponse.data;
@@ -553,7 +553,7 @@ app.get("/api/generate-analysis", async (req, res) => {
       };
     
         // Send responses to Python API for analysis
-        const analysisResponse = await axios.post("http://127.0.0.1:3002/analyze_report", {
+        const analysisResponse = await axios.post("https://mindful-ai-backend-aby0.onrender.com/analyze_report", {
           content: analysisData,
         });
     analysis = analysisResponse.data;
