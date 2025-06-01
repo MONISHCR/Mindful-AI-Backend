@@ -1,7 +1,10 @@
+
 Flask
-flask-cors
+Flask-CORS
 python-dotenv
-PyPDF2
 google-generativeai
-gunicorn
 huggingface_hub
+gunicorn
+Pillow
+requests 
+PyPDF2
