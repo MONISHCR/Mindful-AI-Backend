@@ -14,7 +14,7 @@ GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 # --- Flask App Setup ---
 app = Flask(__name__)
 # Enable CORS for requests from the React frontend (adjust origin if needed)
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/api/*": {"origins": "https://mindwellness-site.vercel.app"}}, supports_credentials=True)
 
 # --- Gemini Configuration ---
 MODEL_NAME = 'gemini-1.5-flash' # Or 'gemini-pro'
@@ -160,4 +160,4 @@ if __name__ == '__main__':
     # Use 0.0.0.0 to make it accessible on your network if needed,
     # otherwise localhost (127.0.0.1) is fine.
     # Debug=True is useful for development but should be False in production.
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run()
