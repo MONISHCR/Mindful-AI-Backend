@@ -15,7 +15,7 @@ app = Flask(__name__)
 CORS(app, origins=["https://mindwellness-site.vercel.app"], supports_credentials=True)
 
 
-YOUTUBE_API_KEY = 'AIzaSyCnOF2oY3xz3Qjxu66ZV1LsOXodaxPOplE'
+YOUTUBE_API_KEY = 'AIzaSyBNAMVgp2tE8AjwlGHdzk4cz-O_lpN856k'
 youtube = None
 
 # --- YouTube API Setup ---
